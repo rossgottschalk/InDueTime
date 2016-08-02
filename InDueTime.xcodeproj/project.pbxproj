@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		5BBE72411D512F8300838977 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE72401D512F8300838977 /* main.m */; };
 		5BBE72441D512F8300838977 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE72431D512F8300838977 /* AppDelegate.m */; };
-		5BBE72471D512F8300838977 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE72461D512F8300838977 /* ViewController.m */; };
 		5BBE724A1D512F8300838977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBE72481D512F8300838977 /* Main.storyboard */; };
 		5BBE724D1D512F8300838977 /* InDueTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE724B1D512F8300838977 /* InDueTime.xcdatamodeld */; };
 		5BBE724F1D512F8300838977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBE724E1D512F8300838977 /* Assets.xcassets */; };
 		5BBE72521D512F8300838977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBE72501D512F8300838977 /* LaunchScreen.storyboard */; };
+		5BBE725B1D51434500838977 /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE725A1D51434500838977 /* ToDoTableViewController.m */; };
+		5BBE725E1D51456300838977 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE725D1D51456300838977 /* TaskCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +22,15 @@
 		5BBE72401D512F8300838977 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5BBE72421D512F8300838977 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5BBE72431D512F8300838977 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5BBE72451D512F8300838977 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5BBE72461D512F8300838977 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5BBE72491D512F8300838977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BBE724C1D512F8300838977 /* InDueTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InDueTime.xcdatamodel; sourceTree = "<group>"; };
 		5BBE724E1D512F8300838977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BBE72511D512F8300838977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BBE72531D512F8300838977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BBE72591D51434500838977 /* ToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewController.h; sourceTree = "<group>"; };
+		5BBE725A1D51434500838977 /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
+		5BBE725C1D51456300838977 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
+		5BBE725D1D51456300838977 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +65,10 @@
 			children = (
 				5BBE72421D512F8300838977 /* AppDelegate.h */,
 				5BBE72431D512F8300838977 /* AppDelegate.m */,
-				5BBE72451D512F8300838977 /* ViewController.h */,
-				5BBE72461D512F8300838977 /* ViewController.m */,
+				5BBE72591D51434500838977 /* ToDoTableViewController.h */,
+				5BBE725A1D51434500838977 /* ToDoTableViewController.m */,
+				5BBE725C1D51456300838977 /* TaskCell.h */,
+				5BBE725D1D51456300838977 /* TaskCell.m */,
 				5BBE72481D512F8300838977 /* Main.storyboard */,
 				5BBE724E1D512F8300838977 /* Assets.xcassets */,
 				5BBE72501D512F8300838977 /* LaunchScreen.storyboard */,
@@ -152,8 +157,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BBE72471D512F8300838977 /* ViewController.m in Sources */,
 				5BBE72441D512F8300838977 /* AppDelegate.m in Sources */,
+				5BBE725B1D51434500838977 /* ToDoTableViewController.m in Sources */,
+				5BBE725E1D51456300838977 /* TaskCell.m in Sources */,
 				5BBE724D1D512F8300838977 /* InDueTime.xcdatamodeld in Sources */,
 				5BBE72411D512F8300838977 /* main.m in Sources */,
 			);
