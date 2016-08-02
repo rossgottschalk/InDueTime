@@ -15,6 +15,8 @@
 		5BBE72521D512F8300838977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBE72501D512F8300838977 /* LaunchScreen.storyboard */; };
 		5BBE725B1D51434500838977 /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE725A1D51434500838977 /* ToDoTableViewController.m */; };
 		5BBE725E1D51456300838977 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE725D1D51456300838977 /* TaskCell.m */; };
+		5BBE72631D5155FA00838977 /* Task+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE72601D5155FA00838977 /* Task+CoreDataProperties.m */; };
+		5BBE72641D5155FA00838977 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE72621D5155FA00838977 /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		5BBE725A1D51434500838977 /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
 		5BBE725C1D51456300838977 /* TaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
 		5BBE725D1D51456300838977 /* TaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
+		5BBE725F1D5155FA00838977 /* Task+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Task+CoreDataProperties.h"; path = "../Task+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5BBE72601D5155FA00838977 /* Task+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Task+CoreDataProperties.m"; path = "../Task+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5BBE72611D5155FA00838977 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = ../Task.h; sourceTree = "<group>"; };
+		5BBE72621D5155FA00838977 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = ../Task.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 		5BBE723E1D512F8300838977 /* InDueTime */ = {
 			isa = PBXGroup;
 			children = (
+				5BBE72651D51560E00838977 /* Auto-Gen DoNotTouch */,
+				5BBE72611D5155FA00838977 /* Task.h */,
+				5BBE72621D5155FA00838977 /* Task.m */,
 				5BBE72421D512F8300838977 /* AppDelegate.h */,
 				5BBE72431D512F8300838977 /* AppDelegate.m */,
 				5BBE72591D51434500838977 /* ToDoTableViewController.h */,
@@ -85,6 +94,15 @@
 				5BBE72401D512F8300838977 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5BBE72651D51560E00838977 /* Auto-Gen DoNotTouch */ = {
+			isa = PBXGroup;
+			children = (
+				5BBE725F1D5155FA00838977 /* Task+CoreDataProperties.h */,
+				5BBE72601D5155FA00838977 /* Task+CoreDataProperties.m */,
+			);
+			name = "Auto-Gen DoNotTouch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BBE72641D5155FA00838977 /* Task.m in Sources */,
 				5BBE72441D512F8300838977 /* AppDelegate.m in Sources */,
 				5BBE725B1D51434500838977 /* ToDoTableViewController.m in Sources */,
+				5BBE72631D5155FA00838977 /* Task+CoreDataProperties.m in Sources */,
 				5BBE725E1D51456300838977 /* TaskCell.m in Sources */,
 				5BBE724D1D512F8300838977 /* InDueTime.xcdatamodeld in Sources */,
 				5BBE72411D512F8300838977 /* main.m in Sources */,

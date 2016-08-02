@@ -8,8 +8,15 @@
 
 #import "ToDoTableViewController.h"
 #import "TaskCell.h"
+#import "AppDelegate.h"
+#import "Task.h"
+#import <CoreData/CoreData.h>
 
-@interface ToDoTableViewController ()
+
+@interface ToDoTableViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) NSMutableArray *tasks;
+@property (strong, nonatomic) NSManagedObjectContext *moc;
+
 
 @end
 
@@ -17,12 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"To-Do List";
+    self.tasks = [[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.moc = appDelegate.managedObjectContext;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Task class])];
+    NSError *error = nil;
+    NSArray *tasksFromCoreData = [self.moc executeFetchRequest:fetchRequest error:&error];
+    if (error)
+    {
+        NSLog(@"Could not fetch from moc: %@", [error localizedDescription]);
+    }
+    else
+    {
+        [self.tasks addObjectsFromArray:tasksFromCoreData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,14 +56,25 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.tasks.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
+    TaskCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TaskCell" forIndexPath:indexPath];
+    
     
     // Configure the cell...
+    Task *aNewTask = self.tasks [indexPath.row];
+    if(aNewTask.taskName && ![aNewTask.taskName isEqualToString:@""])
+    {
+        [cell.taskNameTextField setText:aNewTask.taskName];
+    }
+    else
+    {
+        [cell.taskNameTextField becomeFirstResponder];
+    }
+    
     
     return cell;
 }
@@ -93,7 +121,46 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
 }
 */
+#pragma - UITextField delegate
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    BOOL rc = NO;
+    if (![textField.text isEqualToString:@""])
+    {
+        UIView *contentView = [textField superview];
+        TaskCell *cell = (TaskCell *) [contentView superview];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        Task *aNewTask = self.tasks [indexPath.row];
+        aNewTask.taskName = textField.text;
+        [textField resignFirstResponder];
+        [self saveContext];
+    }
+    return rc;
+}
+
+#pragma - Action Handlers
+-(IBAction)addTask:(id)sender
+{
+    Task *aNewTask = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Task class]) inManagedObjectContext:self.moc];
+    [self.tasks addObject:aNewTask];
+    [self.tableView reloadData];
+}
+
+
+
+#pragma - Misc.
+-(void)saveContext
+{
+    NSError *error = nil;
+    [self.moc save:&error];
+    if (error)
+    {
+        NSLog(@"Error for saving moc: %@", [error localizedDescription]);
+    }
+
+}
 
 @end
