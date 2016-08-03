@@ -68,7 +68,9 @@
     Task *aNewTask = self.tasks [indexPath.row];
     if(aNewTask.taskName && ![aNewTask.taskName isEqualToString:@""])
     {
+
         [cell.taskNameTextField setText:aNewTask.taskName];
+        
     }
     else
     {
@@ -149,7 +151,14 @@
     [self.tableView reloadData];
 }
 
-
+-(IBAction)taskSwitch:(UISwitch *)sender
+{
+    UIView *contentView = [sender superview];
+    TaskCell *cell = (TaskCell *) [contentView superview];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Task *aNewTask = self.tasks [indexPath.row];
+    
+}
 
 #pragma - Misc.
 -(void)saveContext
